@@ -1,1 +1,2 @@
-Sequence(n - 1)
+
+    int res = 1;
