@@ -8,8 +8,8 @@
 // {
 //     string rev = str;
 //     reverse(str.begin(), str.end());
-//     return (rev == str);
-// }
+//     return (rev == str); //in cpp when we use "==" operator it compares containts of the both the strings
+// }+ 
 // int main()
 // {
 //     string str;

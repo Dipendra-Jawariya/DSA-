@@ -38,3 +38,4 @@ int main()
     patSearchDist(txt, pat);
     return 0;
 }
+

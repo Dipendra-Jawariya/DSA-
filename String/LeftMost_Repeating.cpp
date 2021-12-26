@@ -4,12 +4,13 @@
 using namespace std;
 
 // Efficient Solution
+// having a look at the efficient method of the solution  for the better solution ofthe solution in the methop
 const int CHAR = 256;
 int LeftRepeatingNo(string s)
 {
-    int fIndex[CHAR];
-    fill(fIndex, fIndex + CHAR, -1);
-    int res = INT_MAX;
+    int fIndex[CHAR]; //Initializing an array 
+    fill(fIndex, fIndex + CHAR, -1);//filling it with -1
+    int res = INT_MAX; 
     for (int i = 0; i < s.length(); i++)
     {
         int fi = fIndex[s[i]];
