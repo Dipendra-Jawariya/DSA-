@@ -2,6 +2,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 // overall this program is linear It runs THETA (N) times to find out all the occurences of the pattern in the text
+// we  are under the assumption that all the charcters of the patter are distinct 
+// This algo will only work for the distinct character of the string it will not work for same characters of the string
 void patSearchDist(string txt, string pat)
 {
     int n = txt.length();

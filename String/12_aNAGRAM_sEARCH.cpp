@@ -37,6 +37,6 @@ int main()
 {
     string txt = "geeksforgeeks";
     string pat = "frog";
-    isPresent(txt, str);
+    isPresent(txt, pat);
     return 0;
 }
