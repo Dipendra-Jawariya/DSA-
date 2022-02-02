@@ -1,5 +1,5 @@
 // Bubble sort Algorithm for sorting it is an example of stable sort algorithm
-
+// Bubble sort is simple comparision algorithm and takes ) O(n^2) time
 #include <iostream>
 using namespace std;
 
