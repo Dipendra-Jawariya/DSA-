@@ -167,78 +167,171 @@
 //     return 0;
 // }
 
-// SELECTION SORT
-#include <bits/stdc++.h>
-using namespace std;
-// void selectionSort(int arr[], int size)
+// // SELECTION SORT
+// #include <bits/stdc++.h>
+// using namespace std;
+// // void selectionSort(int arr[], int size)
+// // {
+// //     int temp[size];
+// //     for (int i = 0; i < size; i++)
+// //     {
+// //         int min_ind = 0;
+// //         for (int j = 1; j < size; j++)
+// //         {
+// //             if (arr[j] < arr[min_ind])
+// //             {
+// //                 min_ind = j;
+// //             }
+// //         }
+// //         temp[i] = arr[min_ind];
+// //         arr[min_ind] = std::numeric_limits<int>::max();
+// //     }
+// //     for (int i = 0; i < size; i++)
+// //     {
+// //         arr[i] = temp[i];
+// //     }
+// // }
+// // }
+// // void selectionSort(int arr[], int n)
+// // {
+// //     for (int i = 0; i < n-1; i++)
+// //     {
+// //         int min_ind = i;
+// //         for (int j = i+1; j < n; j++) //with this for loop we just find the minimum element
+// //         {
+// //             if (arr[j] < arr[min_ind])
+// //             {
+// //                 min_ind = j;   /*Storing the index of the minimum element in the array */
+// //             }
+// //         }
+// //         swap(arr[min_ind],arr[i]);/* here we are just swaping the minimum element with the current index of the outer loop */
+// //     }
+// // }
+// // int main()
+// // {
+// //     int arr[] = {10, 5, 8, 20, 2, 8};
+// //     int size = sizeof(arr) / sizeof(int);
+// //     selectionSort(arr, size);
+// //     for (int i = 0; i < size; i++)
+// //     {
+// //         cout << arr[i] << ' ';
+// //     }
+// //     return 0;
+// // }
+
+// #include <iostream>
+// #include <bits/stdc++.h>
+// using namespace std;
+// void InsertionSort(int arr[], int size)
 // {
-//     int temp[size];
-//     for (int i = 0; i < size; i++)
-//     {
-//         int min_ind = 0;
-//         for (int j = 1; j < size; j++)
-//         {
-//             if (arr[j] < arr[min_ind])
-//             {
-//                 min_ind = j;
-//             }
-//         }
-//         temp[i] = arr[min_ind];
-//         arr[min_ind] = std::numeric_limits<int>::max();
-//     }
-//     for (int i = 0; i < size; i++)
-//     {
-//         arr[i] = temp[i];
-//     }
+//   for(int i =1;i<n;i++){
+//       int key = arr[i];
+//       int j = i-1;
+//       while (j>=0 && arr[j]>key)
+//       {
+//           arr[j+1]=arr[j];
+//           j--;
+//       }
+//       arr[j+1]=key;
+//   }
 // }
-// }
-// void selectionSort(int arr[], int n)
+
+// void InsertionSort(int arr[], int n)
 // {
-//     for (int i = 0; i < n-1; i++)
+//     for (int i = 1; i < n; i++)
 //     {
-//         int min_ind = i;
-//         for (int j = i+1; j < n; j++) //with this for loop we just find the minimum element
+//         int key = arr[i];
+//         int j = i - 1;
+//         while (j >= 0 && arr[j] > key)
 //         {
-//             if (arr[j] < arr[min_ind])
-//             {
-//                 min_ind = j;   /*Storing the index of the minimum element in the array */
-//             }
+//             arr[j + 1] = arr[j];
+//             j--;
 //         }
-//         swap(arr[min_ind],arr[i]);/* here we are just swaping the minimum element with the current index of the outer loop */
+//         arr[j + 1] = key;
+//     }
+//     for (int i = 0; i < n; i++)
+//     {
+//         cout << arr[i] << " ";
 //     }
 // }
 // int main()
 // {
-//     int arr[] = {10, 5, 8, 20, 2, 8};
+//     int arr[] = {20, 5, 40, 60, 10, 30};
 //     int size = sizeof(arr) / sizeof(int);
-//     selectionSort(arr, size);
-//     for (int i = 0; i < size; i++)
-//     {
-//         cout << arr[i] << ' ';
-//     }
+//     InsertionSort(arr, size);
 //     return 0;
 // }
 
+// MERGE SORT
+// This is the nive way to do this we can also optimize this
+// time complexity of this algorithm is O((m+n)*log(m+n));
+// #include <bits/stdc++.h>
+// using namespace std;
+
+// int main()
+// {
+//     int a[] = {10, 15, 20, 20};
+//     int b[] = {1, 12, 15, 85};
+//     int Asize = sizeof(a) / sizeof(a[0]);
+//     int Bsize = sizeof(b) / sizeof(b[0]);
+//     int c[Asize + Bsize];
+//     for (int i = 0; i < Asize; i++)
+//     {
+//         c[i] = a[i];
+//     }
+//     for (int j = 0; j < Bsize; j++)
+//     {
+//         c[j+Asize] = b[j];
+//     }
+//     sort(c, c + Asize + Bsize);
+//     for (int i = 0; i < Asize + Bsize; i++)
+//     {
+//         cout << c[i] << " ";
+//     }
+
+//     return 0;
+// }
+
+
+
+// EFFICIENT SOLUTION
+// Time complexity is O(m+N)
 #include <iostream>
 using namespace std;
-void InsertionSort(int arr[], int size)
+void mergeSort(int a[], int b[], int m, int n)
 {
-    for (int i = 1; i < n; i++)
+    int i = 0, j = 0;
+    while (i < m && j < n)
     {
-        int key = arr[i];
-        int j = i - 1;
-        while (j >= 0 && arr[j] > key)
+        if (a[i] <= b[j])
         {
-            arr[j + 1] = arr[j];
-            j--;
+            cout << a[i] << " ";
+            i++;
         }
-        arr[j + 1] = key;
+        else
+        {
+            cout << b[j] << " ";
+            j++;
+        }
+    }
+    while (i < m)
+    {
+        cout << a[i] << " ";
+        i++;
+    }
+    while (j < n)
+    {
+        cout << b[j] << " ";
+        j++;
     }
 }
 int main()
 {
-    int arr[] = {20, 5, 40, 60, 10, 30};
-    int size = sizeof(arr) / sizeof(int);
-    InsertionSort(arr, size);
+    int a[] = {10, 15, 20, 20};
+    int b[] = {1, 12};
+    int m = sizeof(a) / sizeof(a[0]);
+    int n = sizeof(b) / sizeof(b[0]);
+    // int c[m+n];
+    mergeSort(a, b, m, n);
     return 0;
 }
