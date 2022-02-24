@@ -1,12 +1,12 @@
 // Bubble sort Algorithm for sorting it is an example of stable sort algorithm
-
+// Bubble sort is simple comparision algorithm and takes ) O(n^2) time
 #include <iostream>
 using namespace std;
 
 // We can optimize the code for sorted array or array which is near sorted
 // Bubble sort algorithm never changes order of equal elements therefore it is more likely to be stable
 void bubbleSort(int arr[], int n)
-{
+{ 
     for (int i = 0; i < n - 1; i++)
     {
         bool swapped = false;
